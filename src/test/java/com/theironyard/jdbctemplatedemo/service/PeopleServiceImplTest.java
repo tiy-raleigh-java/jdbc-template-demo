@@ -14,17 +14,17 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class PeopleServiceTest {
+public class PeopleServiceImplTest {
 
     @Autowired
-    PeopleService peopleService;
+    PeopleService peopleServiceImpl;
 
     @Test
     public void listPeopleTest() throws Exception {
         // arrange
 
         // act
-        List<Person> people = peopleService.listPeople("");
+        List<Person> people = peopleServiceImpl.listPeople("");
 
         // assert
         assertEquals(100, people.size());
@@ -33,10 +33,10 @@ public class PeopleServiceTest {
     @Test
     public void whenPersonIsSavedThenPersonIsInDatabase(){
         // act
-        peopleService.savePerson(new Person("Phil", "Philson"));
+        peopleServiceImpl.savePerson(new Person("Phil", "Philson"));
 
         // assert
-        List<Person> people = peopleService.listPeople("Philson");
+        List<Person> people = peopleServiceImpl.listPeople("Philson");
         assertTrue(people.size() > 0);
 
 
