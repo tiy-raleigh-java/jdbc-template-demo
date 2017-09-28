@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>List 'o People</title>
+</head>
+<body>
+
+<p><a href="personForm.html" th:action="'/personForm'">Create a person</a></p>
+
+<h1>These are my <span th:text="${people.size()}">3</span> people</h1>
+
+<form action="index.html" th:action="'/'" method="get">
+    <input type="text" name="search" value="" th:value="${search}" placeholder="Search" />
+    <button>Search</button>
+</form>
+
+<ol>
+    <li th:each="person : ${people}" th:text="${person.firstName} + ' ' + ${person.lastName} ">Doug Hughes</li>
+    <li th:remove="all">Jamie Bort</li>
+    <li th:remove="all">Justin Kim</li>
+</ol>
+
+</body>
+</html>

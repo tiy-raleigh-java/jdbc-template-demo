@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Person Form</title>
+</head>
+<body>
+
+<h1>Create A Person</h1>
+
+<form action="index.html" th:action="'/savePerson'" method="post">
+    <input name="firstName" value="" placeholder="First Name" /><br />
+    <input name="lastName" value="" placeholder="Last Name" /><br />
+    <button>Save</button>
+</form>
+
+</body>
+</html>
